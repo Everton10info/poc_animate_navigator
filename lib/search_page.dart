@@ -12,10 +12,19 @@ class SearchPage extends StatelessWidget {
         builder: (context) => Scaffold(
           backgroundColor: Colors.yellow,
           appBar: AppBar(
-            leading: const Text('data'),
-            elevation: 0,
-            backgroundColor: Colors.yellow,
-          ),
+              leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                SlideLeftRoute(
+                  page: HomePage(),
+                ),
+              );
+            },
+          )),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -26,7 +35,7 @@ class SearchPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    SlideLeftRoute(page: const HomePage()),
+                    SlideLeftRoute(page: HomePage()),
                   );
                 },
                 child: const Text('Navegar '),

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => HomePage(),
         '/search': (context) => const SearchPage(),
         '/profile': (context) => const ProfilePage()
       },
@@ -41,9 +41,6 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bottom Navigation Bar'),
-      ),
       body: Stack(
         children: [
           IndexedStack(
@@ -75,6 +72,6 @@ class MyHomePageState extends State<MyHomePage> {
 }
 
 final List<Widget> _pages = [
-  const HomePage(),
+  HomePage(),
   const ProfilePage(),
 ];
